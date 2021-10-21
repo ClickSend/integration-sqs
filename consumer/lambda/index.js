@@ -1,7 +1,7 @@
 
 var api = require('./node_modules/clicksend/api.js');
 
-var smsApi = new api.SMSApi("username", "password");
+var smsApi = new api.SMSApi("USERNAME", "API_KEY");
 
 
 exports.handler = function(event, context, callback) {
