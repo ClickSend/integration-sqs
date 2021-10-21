@@ -35,6 +35,6 @@ exports.handler = function(event, context, callback) {
 	  console.log("sendind sms failed:"+err.body);
 	  callback(Error(err));
 	});
-	console.log("sending smses finished");
+	console.log("sending messages finished");
 
 }
