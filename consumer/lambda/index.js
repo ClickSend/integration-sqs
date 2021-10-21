@@ -25,7 +25,7 @@ exports.handler = function(event, context, callback) {
 	});
   
   
-  	console.log("sending smses ");
+  	console.log("sending messages ");
 	smsApi.smsSendPost(smsCollection).then(function(response) {
 		console.log("sending sms success");
 		console.log(response.body);
@@ -35,6 +35,6 @@ exports.handler = function(event, context, callback) {
 	  console.log("sendind sms failed:"+err.body);
 	  callback(Error(err));
 	});
-	console.log("sending smses finished");
+	console.log("sending messages finished");
 
 }
