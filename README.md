@@ -1,4 +1,4 @@
-# CLICKSEND AWS SQS INTEGRATION
+# ClickSend AWS SQS Integration
 
 This repository includes example producers and a lambda consumer for sending sms through clicksend sms api over AWS SQS
 
