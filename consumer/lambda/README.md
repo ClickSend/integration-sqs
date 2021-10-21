@@ -1,7 +1,7 @@
 AWS Lambda for consuming sms events from SQS and sending to clicksend api
 
 1- Replace credentials with yours:
-var smsApi = new api.SMSApi("username", "password");
+var smsApi = new api.SMSApi("USERNAME", "API_KEY");
 
 2- Install dependencies as mentioned at https://github.com/ClickSend/clicksend-nodejs
 
