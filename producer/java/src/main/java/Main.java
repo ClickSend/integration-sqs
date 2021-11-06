@@ -7,9 +7,8 @@ import software.amazon.awssdk.services.sqs.model.SendMessageResponse;
 
 public class Main {
 
+    //Put your own queue url
     private final static String QUEUE_URL ="https://sqs.eu-west-1.amazonaws.com/023280750523/emaileventsqueue";
-    public static final String ACCESS_KEY_ID = "";
-    public static final String ACCESS_KEY_SECRET = "";
 
     public static void main(String[] args) {
 
