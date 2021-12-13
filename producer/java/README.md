@@ -9,5 +9,7 @@ How to run it:
     public static final String ACCESS_KEY_ID = "";
     public static final String ACCESS_KEY_SECRET = "";
 
-3- than run Main.java since it has a public static void main method. 
-Alternatively you can run it with mvn compile exec:java -Dexec.mainClass="Main"
+3- than run Main.java with credentials as parameters with first as the aws_access_key_id and second as aws_secret_access_key since it has a public static void main method. 
+
+Alternatively after replacing AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_SECRET with your credentails you can run it with "mvn clean install"
+on command line.

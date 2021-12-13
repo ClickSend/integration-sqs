@@ -14,3 +14,4 @@ https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-starte
 2- after you completed required steps run it by:
 
 node main.js
+You can send multiple numbers by adding any number to numbers array
