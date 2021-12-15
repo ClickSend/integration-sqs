@@ -12,10 +12,10 @@ var params = {
         // body: your message, 
         // from: by default it is shared number, you can also choose your business name, or your own number,
         // for more information regarding "from" follow: https://help.clicksend.com/article/4kgj7krx00-what-is-a-sender-id-or-sender-number
-  MessageBody: '{"to":"+61410719979","source":"sqs","body":"hello from aws", "from":"Robert"}',
+  MessageBody: '{"to":"+6111111111","source":"sqs","body":"hello from node", "from":"Testing"}',
 
   // Insert your AWS queue url
-  QueueUrl: "https://sqs.ap-southeast-2.amazonaws.com/193962410929/Testing"
+  QueueUrl: "https://sqs.region.amazonaws.com/XXXXXXXXXXXX/queuename"
 };
 
 sqs.sendMessage(params, function(err, data) {

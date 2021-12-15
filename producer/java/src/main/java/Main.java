@@ -11,8 +11,7 @@ import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 public class Main {
 
     // Insert your AWS queue url
-    private final static String QUEUE_URL ="https://sqs.ap-southeast-2.amazonaws.com/193962410929/Permission_check";//
-    // sqs send msg, least privelage principle,create queue
+    private final static String QUEUE_URL ="https://sqs.region.amazonaws.com/XXXXXXXXXXXX/queuename";//
 
     static ProfileCredentialsProvider acc = ProfileCredentialsProvider.builder().build();
 
@@ -26,7 +25,7 @@ public class Main {
 
         // Insert the your region, for information follow: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
         SqsClient sqsClient = SqsClient.builder()
-                .region(Region.AP_SOUTHEAST_2)
+                .region(Region.region)
                 .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
                 .build();
 
@@ -39,9 +38,9 @@ public class Main {
         // from: by default it is shared number, you can also choose your business name, or your own number,
         // for more information regarding "from" follow: https://help.clicksend.com/article/4kgj7krx00-what-is-a-sender-id-or-sender-number
                 .messageBody("{" +
-                        "\"to\":\"+61410719979\"," +
+                        "\"to\":\"+6311111111\"," +
                         "\"source\":\"sqs\"," +
-                        "\"body\":\"hello from permisson test java vscode\"," +
+                        "\"body\":\"hello from java\"," +
                         "\"from\":\"Testing\""+
                         "}")
                 .build());
