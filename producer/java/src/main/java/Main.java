@@ -43,7 +43,7 @@ public class Main {
  
         // Insert the your region, for information follow: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
         SqsClient sqsClient = SqsClient.builder()
-                .region(Region.AP_SOUTHEAST_2)
+                .region(Region.Region)
                 .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
                 .build();
 
