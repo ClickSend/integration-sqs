@@ -27,11 +27,12 @@ There are three main components used in sending an SMS using the ClickSend API.
 -   You must have a GitHub account -
     [Sign-Up](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ClickSend%2Fintegration-sqs)
 
-#### Dependencies (follow the instructions below):
+#### Dependencies (Please Install it as per the instructions):
 
 1.  ClickSend:
 
     -   Install ClickSend SDK for sending messages from the command line / shell
+    
         ```sh
         npm i clicksend
         ```
@@ -132,45 +133,40 @@ the dependencies and run the program:
     b. [config-file-location](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html)   
     For example:
    
-    <img width="450" alt="Group" src="https://user-images.githubusercontent.com/66475561/146483502-e1ed06d8-cabe-4491-9038-e762b28d2361.png">
+    <img width="450" alt="CLI Credentials" src="https://user-images.githubusercontent.com/66475561/146483502-e1ed06d8-cabe-4491-9038-e762b28d2361.png">
     
 **Creating the/an AWS-SQS queue**
 
-1.  To setup your AWS-SQS, go to your AWS console and search for “SQS” and
-    select the first option:
+16. To setup your AWS-SQS, go to your AWS console and search for “SQS” and select the first option:
+     
+    <img width="450" alt="AWS SQS" src="https://user-images.githubusercontent.com/66475561/146493941-7b523e0c-dec6-4558-821b-ca2c749ee024.png">
 
-    ![Graphical user interface, text, application, chat or text message
-    Description automatically
-    generated](media/166f8ba24eaa32ce18b97911ec375328.png)
+17. Click on “Create queue”:
 
-2.  Click on “Create queue”:
+    <img width="450" alt="Create queue" src="https://user-images.githubusercontent.com/66475561/146495132-08783deb-168d-4da3-be18-aff245f663a9.png">
 
-    ![](media/6650f0b16bea87a290ee9a24e6d5a3de.png)
+18. Select a name for the queue as per your convenience. No need to change any settings/configuration/access policy the default settings are enough.
 
-3.  ![](media/a2d92040e8293144d67d997e9cf7d94b.png)Select a name for the queue
-    as per your convenience. No need to change any settings/configuration/access
-    policy the default settings are enough.
-    ![](media/bd8f1c2fcf3b13fb63313cbd0d57117f.png)
+    <img width="450" alt="Queue name" src="https://user-images.githubusercontent.com/66475561/146495940-1161134c-7109-46ec-8201-e5c623635133.png">
 
-4.  After selecting the name, press the create queue button.
+19. After selecting the name, press the create queue button.
 
-    ![Graphical user interface, text, application, Teams Description
-    automatically generated](media/7d2f74cc3bec5361ca5c2e7284bcd8e2.png)
+    <img width="450" alt="Queue Name" src="https://user-images.githubusercontent.com/66475561/146496972-bc6b6c4e-929e-45f8-b15b-ba7513a636b4.png">
 
-5.  After creating the queue, a window stating the following message should
-    appear on your screen. Copy the queue URL.
+20. After creating the queue, a window stating the following message should appear on your screen. Copy the queue URL.
+    
+    <img width="450" alt="Queue" src="https://user-images.githubusercontent.com/66475561/146497637-7bf579db-c13b-406b-993f-cce05c1ddb97.png">
 
 **Sending SMS to an AWS Queue:**
 
 **This guide shows two ways to produce and send SMS to AWS SQS queue**
 
-1.  **Using Java**
+**a. Using Java**
 
-1.  Open the producer java folder as maven project from any IDE. For example, on
+21. Open the producer java folder as maven project from any IDE. For example, on
     visual studio code:
 
-    ![Graphical user interface, text, chat or text message Description
-    automatically generated](media/971db02b1b474312e9cc5cabb80658f3.png)
+    
 
     1.  In case you do not have maven installed on your IDE, you should first
         install it from your IDE’s extension page. For example, on visual studio
