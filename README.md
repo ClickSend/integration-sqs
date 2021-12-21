@@ -33,42 +33,6 @@ There are three main components used in sending an SMS using the ClickSend API.
 
 -   You must have NodeJs installed on your PC - [NodeJS](https://nodejs.org/en/)
 
-#### Dependencies (Please Install it as per the instructions):
-
-1.  ClickSend:
-
-    -   Install ClickSend SDK for sending messages from the command line / shell
-    
-        ```sh
-        npm i clicksend
-        ```
-    -   Install TypeScript which will be used to compile the code:
-        ```sh
-        sudo npm install typescript
-        ```
-    -   For compiling typescript into javascript:
-        ```sh
-        sudo npm add request http bluebird @types/node
-        tsc --target es5 /node_modules/clicksend/api.ts
-        ```
-    -   For more information, please follow [the setup guide in GitHub](https://github.com/ClickSend/clicksend-nodejs)
-
-2.  AWS
-
-    -   Install AWS SDK and AWS uuid for sending the request to SQS
-
-        ```sh
-        npm install
-        ```
-        (uses package.json from integration-SQS/producer/nodejs to
-        check the AWS SDK and AWS uuid dependencies)
-
-    -   Install AWS-CLI for making requests to SQS, follow this link:
-        [AWS-CLI](https://aws.amazon.com/cli/)
-
-    -   For more information regarding AWS node, please follow this link:
-        [AWS-Node](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html)
-
 After you have fulfilled the above prerequisites, follow these steps to install
 the dependencies and run the program:
 
@@ -76,7 +40,7 @@ the dependencies and run the program:
 
 1.  Open your command line / shell
      <p float="left">
-     <img src="https://user-images.githubusercontent.com/66475561/146469403-8eb6a158-72b5-47ea-83d3-362651133a1d.png" alt="window_cmd" width="450" height="255"/> <img src="https://user-images.githubusercontent.com/66475561/146470139-ef736eb4-89a0-4b0e-8b84-feeaf29984ec.png" alt="terminal" width="450" height="255"/>
+     <img src="https://user-images.githubusercontent.com/66475561/146469403-8eb6a158-72b5-47ea-83d3-362651133a1d.png" alt="window_cmd" width="450" height="255"/>   <img src="https://user-images.githubusercontent.com/66475561/146470139-ef736eb4-89a0-4b0e-8b84-feeaf29984ec.png" alt="terminal" width="450" height="255"/>
      </p>
 
 
@@ -168,121 +132,135 @@ the dependencies and run the program:
 
 **Sending SMS to an AWS Queue:** 
 
-**This guide shows two ways to produce and send SMS to AWS SQS queue**
+20. #### This guide shows two ways to produce and send SMS to AWS SQS queue
 
-**20(a). If you want to use Java**
+    #### Option 1: If you want to use Java
 
     Open the producer java folder as maven project from any IDE. For example, on
     visual studio code:
     <img width="450" alt="JAVA" src="https://user-images.githubusercontent.com/66475561/146703412-f079c596-2197-4fa6-a245-3b39721fd953.png">
 
-    In case you do not have maven installed on your IDE, you should first
-    install it from your IDE’s extension page. For example, on visual studio
-    code:
+    a. In case if you do not have maven installed on your IDE, you should first install it from your IDE’s extension page. For example, on visual studio code:
 
     <img width="450" alt="Maven" src="https://user-images.githubusercontent.com/66475561/146703600-e072047f-9021-466a-997b-e92c4d39ff09.png">
 
-ii. Or download and install from: [Apache-Maven](https://maven.apache.org/download.cgi)
+    b. Or download and install from: [Apache-Maven](https://maven.apache.org/download.cgi)
 
-Replace the AWS SQS queue URL in the main.java file with the created queue URL:
+    Replace the AWS SQS queue URL in the main.java file with the created queue URL:
 
-<img width="450" alt="Queue URL" src="https://user-images.githubusercontent.com/66475561/146704099-d16c5c8a-a590-4228-bed0-d46da6123615.png">
+    <img width="450" alt="Queue URL" src="https://user-images.githubusercontent.com/66475561/146704099-d16c5c8a-a590-4228-bed0-d46da6123615.png">
 
-Insert your region and the content of message body:
+    Insert your region and the content of message body:
 
-<img width="450" alt="Region" src="https://user-images.githubusercontent.com/66475561/146704604-e3057a4c-100a-49f3-9a74-4edc75d80598.png">
+    <img width="450" alt="Region" src="https://user-images.githubusercontent.com/66475561/146704604-e3057a4c-100a-49f3-9a74-4edc75d80598.png">
 
-Run the program. You should see a message response like this in your IDE’s
-terminal:
+    Run the program. You should see a message response like this in your IDE’s terminal:
 
-<img width="450" alt="Success" src="https://user-images.githubusercontent.com/66475561/146708174-2f8ea5cf-d2b5-4606-8b84-3a835cdf965b.png">
+    <img width="450" alt="Success" src="https://user-images.githubusercontent.com/66475561/146708174-2f8ea5cf-d2b5-4606-8b84-3a835cdf965b.png">
 
-**21(b). If you want to use NodeJS**
+    #### Option 2: If you want to use NodeJS
 
     Open the producer nodejs folder from any IDE.
 
     <img width="450" alt="NodeJS" src="https://user-images.githubusercontent.com/66475561/146708363-96a41f05-21eb-4a02-9e25-138cbc41cd4f.png">
 
-Replace the AWS SQS queue URL in the main.js file with the created queue URL, For example, on visual studio code:
+    Replace the AWS SQS queue URL in the main.js file with the created queue URL, For example, on visual studio code:
 
-<img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/146708363-96a41f05-21eb-4a02-9e25-138cbc41cd4f.png">
+    <img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/146875026-a3268206-3d34-4667-9d21-460f76b27900.png">
 
-27.  ![Text Description automatically
-    generated](media/ca8c0814160177e010266acbeeceed45.png)Change the content of
-    the message body:
+21. Change the content of the message body:
 
-28.  To execute the program, enter the node main.js command in the terminal and
-    run it. You should see
+    <img width="450" alt="Message" src="https://user-images.githubusercontent.com/66475561/146875300-13a34138-7294-4a6f-8ae1-032d87b2ba73.png">
 
-    ![](media/1d750f4756035856d2b980a3fbf37c6d.png)a message response like this
-    in your IDE’s terminal:
+22. Execute the "main.js" file by running the following command on command line / shell: 
 
-**To test the message delivery to queue**
+    ```sh
+    node main.js
+    ```
+    
+    You should see a success message like this in IDE's terminal:
+    
+    <img width="450" alt="Success" src="https://user-images.githubusercontent.com/66475561/146876211-395e912a-ce74-4d63-b70e-9505284be13f.png">  
 
-1.  To check whether this message has been sent to a/the queue, press on the
+    
+
+**To test whether the message is in the queue**
+
+23. To check whether this message has reached the queue, press on the
     “Send and receive messages” button.
+    
+    <img width="450" alt="SMS queue" src="https://user-images.githubusercontent.com/66475561/146885812-677750cc-9797-475b-8002-c6daf0ec62b2.png">
 
-    ![Graphical user interface, application, Teams Description automatically
-    generated](media/39492de01b69250d63f234f7eed95415.png)
-
-2.  Then click on the “Poll for messages”, there should be messages
-    available.![Graphical user interface, application, Teams Description
-    automatically generated](media/5a5fce2f0602791fd704f15b428291f3.png)
+    
+24. Then click on the “Poll for messages”, there should be messages available.
+    
+    <img width="450" alt="Poll" src="https://user-images.githubusercontent.com/66475561/146886327-fa84dd73-1641-4320-85ca-1426ad866391.png">
 
 **Creating a Lambda event listener:**
 
 Now we need to create an AWS Lambda function which will accept and send the
 messages to the ClickSend API.
 
-1.  In the search bar of your AWS console enter and select Lambda.
+25. In the search bar of your AWS console enter and select Lambda.
 
-    ![Graphical user interface, application Description automatically
-    generated](media/c8dd6655631434f51c795e3ad76fe8e6.png)
+    <img width="450" alt="Lambda" src="https://user-images.githubusercontent.com/66475561/146886884-f268d9a8-442c-47a5-b97e-55071e877bda.png">
 
-2.  Click on create function
+26. Click on create function
 
-    ![Graphical user interface, application Description automatically
-    generated](media/2094e7c8821460b691011664f28580c3.png)
+    <img width="450" alt="Function" src="https://user-images.githubusercontent.com/66475561/146886923-cd9f4409-93d4-4991-a6cc-fe4abd2d6ce8.png">
 
-3.  Enter a function name![Graphical user interface, text, application, email
-    Description automatically
-    generated](media/15522d25cfd5764847a014b56a06e044.png)
+27. Enter a function name
 
-4.  In the permission section search and add “Amazon SQS poller permissions”
+    <img width="450" alt="Function Name" src="https://user-images.githubusercontent.com/66475561/146893423-504fd725-61fc-4ae3-83ff-607c1a5d3775.png">
+
+28. In the permission section search and add “Amazon SQS poller permissions”
     under the “Policy templates” field. Click on “Create function”.
 
-    ![Graphical user interface, text, application, Teams Description
-    automatically generated](media/78fe240ef875fe9e9960d77844a7b6fa.png)
+    <img width="450" alt="Policy" src="https://user-images.githubusercontent.com/66475561/146892832-1b75c162-7388-467a-93d3-118c5ac2810e.png">
 
 **Setting up the Lambda with our consumer**
 
 Now that our Lambda is created, we need to add code to Lambda that enables
 Lambda to send the messages via ClickSend API.
 
-1.  Browse to consumer/Lambda folder on your computer from terminal/cmd.
+29. Browse to consumer/Lambda folder on your computer from terminal/cmd.
 
-    ![](media/c74cda0d7eab97bac158e03f6bfdec58.png)
+    <img width="450" alt="Lambda Folder" src="https://user-images.githubusercontent.com/66475561/146889369-2b37cd85-7584-4881-a68a-b91064b476b7.png">
 
-2.  Install ClickSend dependencies by running the “Dependencies” commands of
-    both ClickSend from the 1st page on terminal or cmd.
 
-3.  After the installation, you should have these files/folders in your consumer
-    folder.![A picture containing text Description automatically
-    generated](media/169b49758f8236e070aef73e95a1ece7.png)
+30. Install ClickSend dependencies by running the these commands:
+  
+    -   Install ClickSend SDK for sending messages from the command line / shell
+    
+        ```sh
+        npm i clicksend
+        ```
+    -   Install TypeScript which will be used to compile the code:
+        ```sh
+        sudo npm install typescript
+        ```
+    -   For compiling typescript into javascript:
+        ```sh
+        sudo npm add request http bluebird @types/node
+        tsc --target es5 /node_modules/clicksend/api.ts
+        ```
+    -   For more information, please follow [the setup guide in GitHub](https://github.com/ClickSend/clicksend-nodejs)
 
-4.  Compress this 3 files/folder into a zip file, choose any name.
+31. After the installation, you should have these files/folders in your consumer folder.
+    
+    <img width="450" alt="File Check" src="https://user-images.githubusercontent.com/66475561/146891182-400bfc83-2914-4d79-b9ad-afb0bb9caaaa.png">
 
-5.  Now run the following command from your terminal/cmd. Replace the
-    “sqssmseventconsumer” with your Lambda function name created above and
-    “Lambda.zip” with your zip file name.
+32. Compress these 3 files/folder into a zip file, choose any name.
 
-    aws lambda update-function-code --function-name sqssmseventconsumer
-    \--zip-file fileb://Lambda.zip
+33. Replace the “sqssmseventconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
 
-6.  Refresh the AWS page, you should see notification stating:
+    ```sh
+    aws lambda update-function-code --function-name sqssmseventconsumer --zip-file fileb://Lambda.zip
+    ```
 
-    ![Graphical user interface, text, application, email, Teams Description
-    automatically generated](media/dbb5c7d20146e7b4db335b76f093ded6.png)
+34. Refresh the page, you should see notification stating:
+
+    <img width="450" alt="Notification" src="https://user-images.githubusercontent.com/66475561/146892193-53293f95-d2b1-4298-b9e6-61e532f68902.png">
 
 **Setting up your ClickSend credentials on AWS Lambda function:**
 
