@@ -252,10 +252,10 @@ Lambda to send the messages via ClickSend API.
 
 32. Compress these 3 files/folder into a zip file, choose any name.
 
-33. Replace the “sqssmseventconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
+33. Replace the “sqssmsconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
 
     ```sh
-    aws lambda update-function-code --function-name sqssmseventconsumer --zip-file fileb://Lambda.zip
+    aws lambda update-function-code --function-name sqssmsconsumer --zip-file fileb://Lambda.zip
     ```
 
 34. Refresh the page, you should see notification stating:
@@ -264,58 +264,47 @@ Lambda to send the messages via ClickSend API.
 
 **Setting up your ClickSend credentials on AWS Lambda function:**
 
-1.  To get your ClickSend credential, follow this link:
+35. Get your ClickSend credential, follow this link:
     [ClickSend_Credentials](https://dashboard.clicksend.com/account/subaccounts)
 
-2.  To set your ClickSend credentials on AWS Lambda, we need to create two
-    environment variables on your Lambda function. Go to configuration tab and
-    click on environment variables. Then click on edit.![Graphical user
-    interface, application, Teams Description automatically
-    generated](media/1a455b7a3e599ab801bfc5ca88dcced5.png)
+36. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
 
-3.  Click on add environment variable![Graphical user interface, text,
-    application, Teams Description automatically
-    generated](media/363b905bc2fb55c41bf7fc1368972d38.png)
+    <img width="450" alt="ENV Variables" src="https://user-images.githubusercontent.com/66475561/147016256-6edb127d-c100-4c8c-a24d-fd48bdaa017f.png">
 
-4.  Create the two environment variables named “username” and “api_key” and
-    insert your ClickSend credentials in the value column and click
-    save.![Graphical user interface, application Description automatically
-    generated](media/731880ee81483e0e38ede1635bd675b0.png)
+37. Click on "Add environment variable":
 
-5.  You should be able to see the created environment variable.
+    <img width="450" alt="Add Variables" src="https://user-images.githubusercontent.com/66475561/147019516-0ad0d49f-5a77-4a15-a0d3-71fc1e940491.png">
 
-    ![Graphical user interface, text, application Description automatically
-    generated](media/c4701103aefda696f508fbd8f70d99a3.png)
+38. Create the two environment variables named “username” and “api_key” and insert your ClickSend credentials in the value column and click save.
+
+    <img width="450" alt="Two Variables" src="https://user-images.githubusercontent.com/66475561/147020744-a3c2d5c2-2c5c-430a-b495-9974d18c3271.png">
+
+39. You should be able to see the created environment variable.
+
+    <img width="450" alt="Added Variables" src="https://user-images.githubusercontent.com/66475561/147021059-3969a5b1-7c0f-48a9-b504-99c2cb3d8fb1.png">
 
 **Creating trigger for the Lambda function:**
 
-1.  Click on the add trigger button
+40. Click on the "Add trigger":
 
-    ![Graphical user interface, application Description automatically
-    generated](media/63d7d4bbe11ff91e501f4597b3069894.png)
+    <img width="450" alt="Add Trigger" src="https://user-images.githubusercontent.com/66475561/147021250-b1e08da1-7f9c-46b5-9041-7ed81307d036.png">
+    
+41. Search and select "SQS" from search bar
 
-1.  Select SQS in search bar
+    <img width="450" alt="Search SQS" src="https://user-images.githubusercontent.com/66475561/147021720-bb420443-b0bd-4901-825e-07bf5d23cf80.png">
 
-    ![Graphical user interface, application, Word Description automatically
-    generated](media/8877ee7796c87e0daf9b0027e6e636d9.png)
+42. Search and select your created queue from the SQS queue search bar.
 
-2.  Search and select your created queue from the SQS queue search bar.
+    <img width="450" alt="Created queue" src="https://user-images.githubusercontent.com/66475561/147022260-b24219bb-fbee-48e3-9825-e1848b6b464f.png">
+    
+43. Click on the “Add trigger” button. You should the following message:
 
-3.  Click on the “Add trigger” button. You should the following
-    message:![Graphical user interface, application Description automatically
-    generated](media/ff7b5487455e3e713b8a4d76e0c33dab.png)
+    <img width="450" alt="Added trigger" src="https://user-images.githubusercontent.com/66475561/147023491-d809534d-6ad5-42a5-b466-3b6d403e6dd1.png">
+    
+44. Done. Now everything is set up and configured.
 
-    ![Graphical user interface, application Description automatically
-    generated](media/4bb7811e3a9cf13d0b6972deef2e8921.png)
+45. Now whenever you want to send a message to someone, just change messagebody, to & from in the one of producers and run.
 
-4.  Done. Now everything is set up and configured.
-
-5.  Now whenever you want to send a message to someone, just change messagebody,
-    to & from in the one of producers and run.
-
-6.  You can also see logs of your sent messages on the CloudWatch logs tab. If
-    the log of messages does not appear here, click on “View logs in CloudWatch”
-    button.![Graphical user interface, text, application, email Description
-    automatically generated](media/a9565513b43147d34abdc46cecb8175f.png)
-
-
+46. You can also see logs of your sent messages on the CloudWatch logs tab. If the log of messages does not appear here, click on “View logs in CloudWatch” button.
+    
+    <img width="450" alt="Logs" src="https://user-images.githubusercontent.com/66475561/147023692-c503d486-a5fa-413b-841b-196ad0a0b439.png">
