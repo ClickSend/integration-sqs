@@ -81,9 +81,9 @@ the dependencies and run the program:
     
     #### Option 2: You are the administrator
     
-    In case you are the administrator or if you have created a new AWS account. Copy your credentials from top right from your console:
+    In case you are the administrator or if you have created a new AWS account. Copy your credentials from top right of your console:
     
-    <img width="450" alt="Group" src="![Uploading Screen Shot 2021-12-22 at 2.16.38 pm.png…]()">
+    <img width="450" alt="Group" src="https://user-images.githubusercontent.com/66475561/147034794-e4270027-0f80-4e07-bee1-a46c2e40a409.png">
     
 7. Configure your AWS CLI by creating and setting up .AWS folder
     credential(obtained from above) and config(your region) files (make sure
