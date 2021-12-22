@@ -47,8 +47,9 @@ the dependencies and run the program:
 2.  Follow this link and run the commands on terminal or cmd to install GitHub
     cli: [GitHub-CLI](https://cli.github.com/manual/installation)
 
-3.  Clone the GitHub repo by following the SQS-repo link or download the zip
+3.  Clone the GitHub repo by following this SQS-repo [link](https://github.com/ClickSend/integration-sqs) or download the zip
     file.
+    
     <img width="450" alt="Github Clone" src="https://user-images.githubusercontent.com/66475561/146472454-87d107f2-1911-4b0a-bd3b-17f7e45d765e.png">
 
 **AWS Dependencies and configuration**
@@ -64,40 +65,27 @@ the dependencies and run the program:
     <img width="450" alt="AWS SDK UUID" src="https://user-images.githubusercontent.com/66475561/146473087-2b543f7c-ee40-420f-86b2-1f9a5b4e9abc.PNG">
     
 
-**To obtain and your AWS credentials and required permissions:**
+**AWS credentials and required permissions:**
 
-6.  Log in to AWS Console, go to IAM console
-
-7.  Click on this [Link](https://console.aws.amazon.com/iamv2/home#/users). Click "next".
+6.  There are two way to obtain the credentials and permissions:
     
-    <img width="450" alt="ADD USER" src="https://user-images.githubusercontent.com/66475561/146476797-a941daee-f59a-4f97-ae61-c4443ef3481d.png">
+    #### Option 1: If you are working under an organisation
     
-8.  Click on “Create group”:
-
-    <img width="450" alt="Create Group" src="https://user-images.githubusercontent.com/66475561/146478032-94c70ccb-8520-449a-84ef-ff146a3efc2e.png">
+    Ask your AWS administartor for your credentials:
     
-
-9. Click on “Create policy”:
-
-    <img width="450" alt="Create Policy" src="https://user-images.githubusercontent.com/66475561/146482022-3f634d69-293f-4342-b312-a15546053ee3.png">
-
-10. Replace the contents of JSON tab with policy.json under the NodeJS producer
-    folder and click on “Next”:
-    
-    <img width="450" alt="JSON" src="https://user-images.githubusercontent.com/66475561/146481575-0affe5c8-75b9-43b6-9eb5-7c8157c2a938.png">
-
-11. After creating the new policy, select the created policy under the policy name column and
-    click on “Create group”.
-    
-    <img width="450" alt="Group" src="https://user-images.githubusercontent.com/66475561/146482270-a5274703-daab-44a5-8e9c-8c44ad280381.png">
-
-12. Click on the "next" for the next two pages.
-
-13. On the last page, copy the Access key ID and Secret access key
-
     <img width="450" alt="Group" src="https://user-images.githubusercontent.com/66475561/146483186-0456729e-831d-4249-b634-c9c818cd0462.png">
     
-14. Configure your AWS CLI by creating and setting up .AWS folder
+    Ask your AWS administrator to grant you the permissions attached in the policy.json file under the nodejs folder by creating a new policy.
+    
+    <img width="450" alt="JSON" src="https://user-images.githubusercontent.com/66475561/146481575-0affe5c8-75b9-43b6-9eb5-7c8157c2a938.png">
+    
+    #### Option 2: You are the administrator
+    
+    In case you are the administrator or if you have created a new AWS account. Copy your credentials from top right from your console:
+    
+    <img width="450" alt="Group" src="![Uploading Screen Shot 2021-12-22 at 2.16.38 pm.png…]()">
+    
+7. Configure your AWS CLI by creating and setting up .AWS folder
     credential(obtained from above) and config(your region) files (make sure
     these files does not have any extensions). Follow these links for more
     instructions:
@@ -110,15 +98,15 @@ the dependencies and run the program:
     
 **Creating the/an AWS-SQS queue**
 
-15. To setup your AWS-SQS, go to your AWS console and search for “SQS” and select the first option:
+8. To setup your AWS-SQS, go to your AWS console and search for “SQS” and select the first option:
      
     <img width="450" alt="AWS SQS" src="https://user-images.githubusercontent.com/66475561/146493941-7b523e0c-dec6-4558-821b-ca2c749ee024.png">
 
-16. Click on “Create queue”:
+9. Click on “Create queue”:
 
     <img width="450" alt="Create queue" src="https://user-images.githubusercontent.com/66475561/146495132-08783deb-168d-4da3-be18-aff245f663a9.png">
 
-17. Select a name for the queue as per your convenience. No need to change any settings/configuration/access policy the default settings are enough.
+10. Select a name for the queue as per your convenience. No need to change any settings/configuration/access policy the default settings are enough.
 
     <img width="450" alt="Queue name" src="https://user-images.githubusercontent.com/66475561/146495940-1161134c-7109-46ec-8201-e5c623635133.png">
 
@@ -126,13 +114,13 @@ the dependencies and run the program:
 
     <img width="450" alt="Queue Name" src="https://user-images.githubusercontent.com/66475561/146496972-bc6b6c4e-929e-45f8-b15b-ba7513a636b4.png">
 
-19. After creating the queue, a window stating the following message should appear on your screen. Copy the queue URL.
+11. After creating the queue, a window stating the following message should appear on your screen. Copy the queue URL.
     
     <img width="450" alt="Queue" src="https://user-images.githubusercontent.com/66475561/146497637-7bf579db-c13b-406b-993f-cce05c1ddb97.png">
 
 **Sending SMS to an AWS Queue:** 
 
-20. #### This guide shows two ways to produce and send SMS to AWS SQS queue
+12. #### This guide shows two ways to produce and send SMS to AWS SQS queue
 
     #### Option 1: If you want to use Java
 
@@ -168,11 +156,11 @@ the dependencies and run the program:
 
     <img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/146875026-a3268206-3d34-4667-9d21-460f76b27900.png">
 
-21. Change the content of the message body:
+13. Change the content of the message body:
 
     <img width="450" alt="Message" src="https://user-images.githubusercontent.com/66475561/146875300-13a34138-7294-4a6f-8ae1-032d87b2ba73.png">
 
-22. Execute the "main.js" file by running the following command on command line / shell: 
+14. Execute the "main.js" file by running the following command on command line / shell: 
 
     ```sh
     node main.js
@@ -186,13 +174,13 @@ the dependencies and run the program:
 
 **To test whether the message is in the queue**
 
-23. To check whether this message has reached the queue, press on the
+15. To check whether this message has reached the queue, press on the
     “Send and receive messages” button.
     
     <img width="450" alt="SMS queue" src="https://user-images.githubusercontent.com/66475561/146885812-677750cc-9797-475b-8002-c6daf0ec62b2.png">
 
     
-24. Then click on the “Poll for messages”, there should be messages available.
+16. Then click on the “Poll for messages”, there should be messages available.
     
     <img width="450" alt="Poll" src="https://user-images.githubusercontent.com/66475561/146886327-fa84dd73-1641-4320-85ca-1426ad866391.png">
 
@@ -201,19 +189,19 @@ the dependencies and run the program:
 Now we need to create an AWS Lambda function which will accept and send the
 messages to the ClickSend API.
 
-25. In the search bar of your AWS console enter and select Lambda.
+17. In the search bar of your AWS console enter and select Lambda.
 
     <img width="450" alt="Lambda" src="https://user-images.githubusercontent.com/66475561/146886884-f268d9a8-442c-47a5-b97e-55071e877bda.png">
 
-26. Click on create function
+18. Click on create function
 
     <img width="450" alt="Function" src="https://user-images.githubusercontent.com/66475561/146886923-cd9f4409-93d4-4991-a6cc-fe4abd2d6ce8.png">
 
-27. Enter a function name
+19. Enter a function name
 
     <img width="450" alt="Function Name" src="https://user-images.githubusercontent.com/66475561/146893423-504fd725-61fc-4ae3-83ff-607c1a5d3775.png">
 
-28. In the permission section search and add “Amazon SQS poller permissions”
+20. In the permission section search and add “Amazon SQS poller permissions”
     under the “Policy templates” field. Click on “Create function”.
 
     <img width="450" alt="Policy" src="https://user-images.githubusercontent.com/66475561/146892832-1b75c162-7388-467a-93d3-118c5ac2810e.png">
@@ -223,12 +211,12 @@ messages to the ClickSend API.
 Now that our Lambda is created, we need to add code to Lambda that enables
 Lambda to send the messages via ClickSend API.
 
-29. Browse to consumer/Lambda folder on your computer from terminal/cmd.
+21. Browse to consumer/Lambda folder on your computer from terminal/cmd.
 
     <img width="450" alt="Lambda Folder" src="https://user-images.githubusercontent.com/66475561/146889369-2b37cd85-7584-4881-a68a-b91064b476b7.png">
 
 
-30. Install ClickSend dependencies by running the these commands:
+22. Install ClickSend dependencies by running the these commands:
   
     -   Install ClickSend SDK for sending messages from the command line / shell
     
@@ -246,65 +234,65 @@ Lambda to send the messages via ClickSend API.
         ```
     -   For more information, please follow [the setup guide in GitHub](https://github.com/ClickSend/clicksend-nodejs)
 
-31. After the installation, you should have these files/folders in your consumer folder.
+23. After the installation, you should have these files/folders in your consumer folder.
     
     <img width="450" alt="File Check" src="https://user-images.githubusercontent.com/66475561/146891182-400bfc83-2914-4d79-b9ad-afb0bb9caaaa.png">
 
-32. Compress these 3 files/folder into a zip file, choose any name.
+24. Compress these 3 files/folder into a zip file, choose any name.
 
-33. Replace the “sqssmsconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
+25. Replace the “sqssmsconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
 
     ```sh
     aws lambda update-function-code --function-name sqssmsconsumer --zip-file fileb://Lambda.zip
     ```
 
-34. Refresh the page, you should see notification stating:
+26. Refresh the page, you should see notification stating:
 
     <img width="450" alt="Notification" src="https://user-images.githubusercontent.com/66475561/146892193-53293f95-d2b1-4298-b9e6-61e532f68902.png">
 
 **Setting up your ClickSend credentials on AWS Lambda function:**
 
-35. Get your ClickSend credential, follow this link:
+27. Get your ClickSend credential, follow this link:
     [ClickSend_Credentials](https://dashboard.clicksend.com/account/subaccounts)
 
-36. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
+28. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
 
     <img width="450" alt="ENV Variables" src="https://user-images.githubusercontent.com/66475561/147016256-6edb127d-c100-4c8c-a24d-fd48bdaa017f.png">
 
-37. Click on "Add environment variable":
+29. Click on "Add environment variable":
 
     <img width="450" alt="Add Variables" src="https://user-images.githubusercontent.com/66475561/147019516-0ad0d49f-5a77-4a15-a0d3-71fc1e940491.png">
 
-38. Create the two environment variables named “username” and “api_key” and insert your ClickSend credentials in the value column and click save.
+30. Create the two environment variables named “username” and “api_key” and insert your ClickSend credentials in the value column and click save.
 
     <img width="450" alt="Two Variables" src="https://user-images.githubusercontent.com/66475561/147020744-a3c2d5c2-2c5c-430a-b495-9974d18c3271.png">
 
-39. You should be able to see the created environment variable.
+31. You should be able to see the created environment variable.
 
     <img width="450" alt="Added Variables" src="https://user-images.githubusercontent.com/66475561/147021059-3969a5b1-7c0f-48a9-b504-99c2cb3d8fb1.png">
 
 **Creating trigger for the Lambda function:**
 
-40. Click on the "Add trigger":
+32. Click on the "Add trigger":
 
     <img width="450" alt="Add Trigger" src="https://user-images.githubusercontent.com/66475561/147021250-b1e08da1-7f9c-46b5-9041-7ed81307d036.png">
     
-41. Search and select "SQS" from search bar
+33. Search and select "SQS" from search bar
 
     <img width="450" alt="Search SQS" src="https://user-images.githubusercontent.com/66475561/147021720-bb420443-b0bd-4901-825e-07bf5d23cf80.png">
 
-42. Search and select your created queue from the SQS queue search bar.
+34. Search and select your created queue from the SQS queue search bar.
 
     <img width="450" alt="Created queue" src="https://user-images.githubusercontent.com/66475561/147022260-b24219bb-fbee-48e3-9825-e1848b6b464f.png">
     
-43. Click on the “Add trigger” button. You should the following message:
+35. Click on the “Add trigger” button. You should the following message:
 
     <img width="450" alt="Added trigger" src="https://user-images.githubusercontent.com/66475561/147023491-d809534d-6ad5-42a5-b466-3b6d403e6dd1.png">
     
-44. Done. Now everything is set up and configured.
+36. Done. Now everything is set up and configured.
 
-45. Now whenever you want to send a message to someone, just change messagebody, to & from in the one of producers and run.
+37. Now whenever you want to send a message to someone, just change messagebody, to & from in the one of producers and run.
 
-46. You can also see logs of your sent messages on the CloudWatch logs tab. If the log of messages does not appear here, click on “View logs in CloudWatch” button.
+38. You can also see logs of your sent messages on the CloudWatch logs tab. If the log of messages does not appear here, click on “View logs in CloudWatch” button.
     
     <img width="450" alt="Logs" src="https://user-images.githubusercontent.com/66475561/147023692-c503d486-a5fa-413b-841b-196ad0a0b439.png">
