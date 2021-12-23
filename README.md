@@ -110,23 +110,23 @@ the dependencies and run the program:
 
     <img width="450" alt="Queue name" src="https://user-images.githubusercontent.com/66475561/146495940-1161134c-7109-46ec-8201-e5c623635133.png">
 
-18. After selecting the name, press the create queue button.
+11. After selecting the name, press the create queue button.
 
     <img width="450" alt="Queue Name" src="https://user-images.githubusercontent.com/66475561/146496972-bc6b6c4e-929e-45f8-b15b-ba7513a636b4.png">
 
-11. After creating the queue, a window stating the following message should appear on your screen. Copy the queue URL.
+12. After creating the queue, a window stating the following message should appear on your screen. Copy the queue URL.
     
-    <img width="450" alt="Queue" src="https://user-images.githubusercontent.com/66475561/146497637-7bf579db-c13b-406b-993f-cce05c1ddb97.png">
+    <img width="450" alt="Queue" src="https://user-images.githubusercontent.com/66475561/147175011-db471e36-5247-4f2a-91ef-65a8106ef12e.png">
 
 **Sending SMS to an AWS Queue:** 
 
-12. #### This guide shows two ways to produce and send SMS to AWS SQS queue
+13. #### This guide shows two ways to produce and send SMS to AWS SQS queue
 
     #### Option 1: If you want to use Java
 
     Open the producer java folder as maven project from any IDE. For example, on
     visual studio code:
-    <img width="450" alt="JAVA" src="https://user-images.githubusercontent.com/66475561/146703412-f079c596-2197-4fa6-a245-3b39721fd953.png">
+    <img width="450" alt="JAVA" src="https://user-images.githubusercontent.com/66475561/147174292-45df6e67-0ff7-4269-af14-3b3b52e80bb4.png">
 
     a. In case if you do not have maven installed on your IDE, you should first install it from your IDE’s extension page. For example, on visual studio code:
 
@@ -136,7 +136,7 @@ the dependencies and run the program:
 
     Replace the AWS SQS queue URL in the main.java file with the created queue URL:
 
-    <img width="450" alt="Queue URL" src="https://user-images.githubusercontent.com/66475561/146704099-d16c5c8a-a590-4228-bed0-d46da6123615.png">
+    <img width="450" alt="Queue URL" src="https://user-images.githubusercontent.com/66475561/147174170-2c18276c-3c73-42c2-8b74-360cc7c97903.png">
 
     Insert your region and the content of message body:
 
@@ -154,13 +154,13 @@ the dependencies and run the program:
 
     Replace the AWS SQS queue URL in the main.js file with the created queue URL, For example, on visual studio code:
 
-    <img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/146875026-a3268206-3d34-4667-9d21-460f76b27900.png">
+    <img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/147174125-6d9eaab0-ef7e-426f-ae1b-a2e7b7c0596f.png">
 
-13. Change the content of the message body:
+14. Change the content of the message body:
 
-    <img width="450" alt="Message" src="https://user-images.githubusercontent.com/66475561/146875300-13a34138-7294-4a6f-8ae1-032d87b2ba73.png">
+    <img width="450" alt="Message" src="https://user-images.githubusercontent.com/66475561/147173985-7b86b894-69d0-4a22-9db9-06f03b157cca.png">
 
-14. Execute the "main.js" file by running the following command on command line / shell: 
+15. Execute the "main.js" file by running the following command on command line / shell: 
 
     ```sh
     node main.js
@@ -174,13 +174,12 @@ the dependencies and run the program:
 
 **To test whether the message is in the queue**
 
-15. To check whether this message has reached the queue, press on the
+16. To check whether this message has reached the queue, press on the
     “Send and receive messages” button.
     
-    <img width="450" alt="SMS queue" src="https://user-images.githubusercontent.com/66475561/146885812-677750cc-9797-475b-8002-c6daf0ec62b2.png">
-
+    <img width="450" alt="SMS queue" src="https://user-images.githubusercontent.com/66475561/147175049-94474414-92d0-4d32-819d-8b67e62e85a6.png">
     
-16. Then click on the “Poll for messages”, there should be messages available.
+17. Then click on the “Poll for messages”, there should be messages available.
     
     <img width="450" alt="Poll" src="https://user-images.githubusercontent.com/66475561/146886327-fa84dd73-1641-4320-85ca-1426ad866391.png">
 
@@ -189,19 +188,19 @@ the dependencies and run the program:
 Now we need to create an AWS Lambda function which will accept and send the
 messages to the ClickSend API.
 
-17. In the search bar of your AWS console enter and select Lambda.
+18. In the search bar of your AWS console enter and select Lambda.
 
     <img width="450" alt="Lambda" src="https://user-images.githubusercontent.com/66475561/146886884-f268d9a8-442c-47a5-b97e-55071e877bda.png">
 
-18. Click on create function
+19. Click on create function
 
     <img width="450" alt="Function" src="https://user-images.githubusercontent.com/66475561/146886923-cd9f4409-93d4-4991-a6cc-fe4abd2d6ce8.png">
 
-19. Enter a function name
+20. Enter a function name
 
     <img width="450" alt="Function Name" src="https://user-images.githubusercontent.com/66475561/146893423-504fd725-61fc-4ae3-83ff-607c1a5d3775.png">
 
-20. In the permission section search and add “Amazon SQS poller permissions”
+21. In the permission section search and add “Amazon SQS poller permissions”
     under the “Policy templates” field. Click on “Create function”.
 
     <img width="450" alt="Policy" src="https://user-images.githubusercontent.com/66475561/146892832-1b75c162-7388-467a-93d3-118c5ac2810e.png">
@@ -211,12 +210,12 @@ messages to the ClickSend API.
 Now that our Lambda is created, we need to add code to Lambda that enables
 Lambda to send the messages via ClickSend API.
 
-21. Browse to consumer/Lambda folder on your computer from terminal/cmd.
+22. Browse to consumer/Lambda folder on your computer from terminal/cmd.
 
     <img width="450" alt="Lambda Folder" src="https://user-images.githubusercontent.com/66475561/146889369-2b37cd85-7584-4881-a68a-b91064b476b7.png">
 
 
-22. Install ClickSend dependencies by running the these commands:
+23. Install ClickSend dependencies by running the these commands:
   
     -   Install ClickSend SDK for sending messages from the command line / shell
     
@@ -234,65 +233,65 @@ Lambda to send the messages via ClickSend API.
         ```
     -   For more information, please follow [the setup guide in GitHub](https://github.com/ClickSend/clicksend-nodejs)
 
-23. After the installation, you should have these files/folders in your consumer folder.
+24. After the installation, you should have these files/folders in your consumer folder.
     
     <img width="450" alt="File Check" src="https://user-images.githubusercontent.com/66475561/146891182-400bfc83-2914-4d79-b9ad-afb0bb9caaaa.png">
 
-24. Compress these 3 files/folder into a zip file, choose any name.
+25. Compress these 3 files/folder into a zip file, choose any name.
 
-25. Replace the “sqssmsconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
+26. Replace the “sqssmsconsumer” with the Lambda function's name and “Lambda.zip” with your zip file name. Run the command from your command line / shell:
 
     ```sh
     aws lambda update-function-code --function-name sqssmsconsumer --zip-file fileb://Lambda.zip
     ```
 
-26. Refresh the page, you should see notification stating:
+27. Refresh the page, you should see notification stating:
 
     <img width="450" alt="Notification" src="https://user-images.githubusercontent.com/66475561/146892193-53293f95-d2b1-4298-b9e6-61e532f68902.png">
 
 **Setting up your ClickSend credentials on AWS Lambda function:**
 
-27. Get your ClickSend credential, follow this link:
+28. Get your ClickSend credential, follow this link:
     [ClickSend_Credentials](https://dashboard.clicksend.com/account/subaccounts)
 
-28. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
+29. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
 
     <img width="450" alt="ENV Variables" src="https://user-images.githubusercontent.com/66475561/147016256-6edb127d-c100-4c8c-a24d-fd48bdaa017f.png">
 
-29. Click on "Add environment variable":
+30. Click on "Add environment variable":
 
     <img width="450" alt="Add Variables" src="https://user-images.githubusercontent.com/66475561/147019516-0ad0d49f-5a77-4a15-a0d3-71fc1e940491.png">
 
-30. Create the two environment variables named “username” and “api_key” and insert your ClickSend credentials in the value column and click save.
+31. Create the two environment variables named “username” and “api_key” and insert your ClickSend credentials in the value column and click save.
 
     <img width="450" alt="Two Variables" src="https://user-images.githubusercontent.com/66475561/147020744-a3c2d5c2-2c5c-430a-b495-9974d18c3271.png">
 
-31. You should be able to see the created environment variable.
+32. You should be able to see the created environment variable.
 
     <img width="450" alt="Added Variables" src="https://user-images.githubusercontent.com/66475561/147021059-3969a5b1-7c0f-48a9-b504-99c2cb3d8fb1.png">
 
 **Creating trigger for the Lambda function:**
 
-32. Click on the "Add trigger":
+33. Click on the "Add trigger":
 
     <img width="450" alt="Add Trigger" src="https://user-images.githubusercontent.com/66475561/147021250-b1e08da1-7f9c-46b5-9041-7ed81307d036.png">
     
-33. Search and select "SQS" from search bar
+34. Search and select "SQS" from search bar
 
     <img width="450" alt="Search SQS" src="https://user-images.githubusercontent.com/66475561/147021720-bb420443-b0bd-4901-825e-07bf5d23cf80.png">
 
-34. Search and select your created queue from the SQS queue search bar.
+35. Search and select your created queue from the SQS queue search bar.
 
-    <img width="450" alt="Created queue" src="https://user-images.githubusercontent.com/66475561/147022260-b24219bb-fbee-48e3-9825-e1848b6b464f.png">
+    <img width="450" alt="Created queue" src="https://user-images.githubusercontent.com/66475561/147175159-bc75ba94-278a-42fa-94f4-500787b2bfb4.png">
     
-35. Click on the “Add trigger” button. You should the following message:
+36. Click on the “Add trigger” button. You should the following message:
 
     <img width="450" alt="Added trigger" src="https://user-images.githubusercontent.com/66475561/147023491-d809534d-6ad5-42a5-b466-3b6d403e6dd1.png">
     
-36. Done. Now everything is set up and configured.
+37. Done. Now everything is set up and configured.
 
-37. Now whenever you want to send a message to someone, just change messagebody, to & from in the one of producers and run.
+38. Now whenever you want to send a message to someone, just change messagebody, to & from in the one of producers and run.
 
-38. You can also see logs of your sent messages on the CloudWatch logs tab. If the log of messages does not appear here, click on “View logs in CloudWatch” button.
+39. You can also see logs of your sent messages on the CloudWatch logs tab. If the log of messages does not appear here, click on “View logs in CloudWatch” button.
     
-    <img width="450" alt="Logs" src="https://user-images.githubusercontent.com/66475561/147023692-c503d486-a5fa-413b-841b-196ad0a0b439.png">
+    <img width="450" alt="Logs" src="https://user-images.githubusercontent.com/66475561/147173859-6dbbc1dd-6cda-4677-98a3-670e984606b1.png">
