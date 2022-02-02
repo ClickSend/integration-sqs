@@ -28,7 +28,7 @@ public class Main {
     // Your message body:- 
         // to: reciever number, use the "numbers" list to change the recipients
         // body: your message, use the "messageToSend" string to change the content of message
-        // from: by default it is shared number, you can also choose your business name, or your own number,
+        // from: Replace "Testing" with your business name, your own number, dedicted number, or leave it blank (uses shared number).
         // for more information regarding "from" follow: https://help.clicksend.com/article/4kgj7krx00-what-is-a-sender-id-or-sender-number
                 .messageBody("{" +
                         "\"to\":\""+phoneNumber+"\"," +
