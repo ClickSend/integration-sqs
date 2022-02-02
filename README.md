@@ -55,7 +55,7 @@ the dependencies and run the program:
 **AWS Dependencies and configuration**
 
 4.  Browse to producer nodejs folder from command line / shell.
-5.  Install AWS-SDK and uuid.
+5.  Install project dependencies.
 
     ```sh
     npm install
@@ -81,13 +81,13 @@ the dependencies and run the program:
     
     #### Option 2: You are the administrator
     
-    In case you are the administrator or if you have created a new AWS account. Copy your credentials from top right of your console:
+    In case you are the administrator or if you have created a new AWS account. Copy your credentials from the security credentials:
     
     <img width="450" alt="Group" src="https://user-images.githubusercontent.com/66475561/147034794-e4270027-0f80-4e07-bee1-a46c2e40a409.png">
     
-7. Configure your AWS CLI by creating and setting up .AWS folder
+7. Configure your AWS CLI by setting up .AWS folder directory and creating 
     credential(obtained from above) and config(your region) files (make sure
-    these files does not have any extensions). Follow these links for more
+    these files does not have any extensions) under this directory. Follow these links for more
     instructions:
     
     a. [cli-config-files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)  
@@ -96,7 +96,7 @@ the dependencies and run the program:
    
     <img width="450" alt="CLI Credentials" src="https://user-images.githubusercontent.com/66475561/146483502-e1ed06d8-cabe-4491-9038-e762b28d2361.png">
     
-**Creating the/an AWS-SQS queue**
+**Creating an AWS-SQS queue**
 
 8. To setup your AWS-SQS, go to your AWS console and search for “SQS” and select the first option:
      
@@ -118,9 +118,9 @@ the dependencies and run the program:
     
     <img width="450" alt="Queue" src="https://user-images.githubusercontent.com/66475561/147175011-db471e36-5247-4f2a-91ef-65a8106ef12e.png">
 
-**Sending SMS to an AWS Queue:** 
+**Sending SMS to an AWS SQS Queue:** 
 
-13. #### This guide shows two ways to produce and send SMS to AWS SQS queue
+13. #### This guide shows two ways send SMS to AWS SQS queue
 
     #### Option 1: If you want to use Java
 
@@ -138,7 +138,7 @@ the dependencies and run the program:
 
     <img width="450" alt="Queue URL" src="https://user-images.githubusercontent.com/66475561/147174170-2c18276c-3c73-42c2-8b74-360cc7c97903.png">
 
-    Insert your region and the content of message body:
+    Insert your region and change the from, to, and message content. Check comments in the file for more details:
 
     <img width="450" alt="Region" src="https://user-images.githubusercontent.com/66475561/146704604-e3057a4c-100a-49f3-9a74-4edc75d80598.png">
 
@@ -156,7 +156,7 @@ the dependencies and run the program:
 
     <img width="450" alt="Replacing URL" src="https://user-images.githubusercontent.com/66475561/147174125-6d9eaab0-ef7e-426f-ae1b-a2e7b7c0596f.png">
 
-14. Change the content of the message body:
+14. Change the from, to, and message content. Check comments in the file for more details:
 
     <img width="450" alt="Message" src="https://user-images.githubusercontent.com/66475561/147173985-7b86b894-69d0-4a22-9db9-06f03b157cca.png">
 
@@ -215,7 +215,7 @@ Lambda to send the messages via ClickSend API.
     <img width="450" alt="Lambda Folder" src="https://user-images.githubusercontent.com/66475561/146889369-2b37cd85-7584-4881-a68a-b91064b476b7.png">
 
 
-23. Install ClickSend dependencies by running the these commands:
+23. Install ClickSend dependencies by running these commands:
   
     -   Install ClickSend SDK for sending messages from the command line / shell
     
@@ -252,7 +252,7 @@ Lambda to send the messages via ClickSend API.
 **Setting up your ClickSend credentials on AWS Lambda function:**
 
 28. Get your ClickSend credential, follow this link:
-    [ClickSend_Credentials](https://dashboard.clicksend.com/account/subaccounts)
+    [ClickSend Credentials](https://dashboard.clicksend.com/account/subaccounts)
 
 29. Set your ClickSend credentials on AWS Lambda, we need to create two environment variables on your Lambda function. Go to configuration tab and click on "Environment variables". Then click on "Edit".
 
