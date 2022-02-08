@@ -3,7 +3,7 @@
 ## Sending SMS through Amazon SQS over ClickSend v3 API:
 
 This tutorial shows you how to integrate the AWS SQS service with ClickSend API using
-AWS Lambda. For troubleshooting purposes please [contact our support team](https://www.clicksend.com/help?utm_source=github&utm_medium=referral&utm_campaign=integration-sqs&utm_content=contact-support),
+AWS Lambda. For troubleshooting purposes please [contact our support team](https://www.clicksend.com/help?utm_source=github&utm_medium=referral&utm_campaign=integration-sqs&utm_content=contact-support).
 
 There are three main components used when sending an SMS using the ClickSend API.
 
