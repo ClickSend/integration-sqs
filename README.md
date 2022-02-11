@@ -281,7 +281,7 @@ it to send the messages via the ClickSend API.
 
     <img width="450" alt="Created queue" src="https://user-images.githubusercontent.com/66475561/147175159-bc75ba94-278a-42fa-94f4-500787b2bfb4.png">
     
-36. Click on the “Add trigger” button. You should the following message:
+36. Click on the “Add” button. You should the following message:
 
     <img width="450" alt="Added trigger" src="https://user-images.githubusercontent.com/66475561/147023491-d809534d-6ad5-42a5-b466-3b6d403e6dd1.png">
     
