@@ -13,7 +13,7 @@ function sendMessage(to, message){
         // to: reciever number, use "numbers" list to add the recipients
         // body: your message, use "messageToSend" variable to change the content of message
         // from: Replace "Testing" with your business name, your own number, dedicted number, or leave it blank (uses shared number),
-        // for more information regarding "from" follow: https://help.clicksend.com/article/4kgj7krx00-what-is-a-sender-id-or-sender-number
+		// for more information regarding "from" follow: https://help.clicksend.com/en/collections/57584-numbers-sender-ids
 		MessageBody: '{"to":"'+to+'","source":"SQS","body":"'+message+'","from":"Testing"}',
 
 		// Insert your AWS queue url
