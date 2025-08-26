@@ -29,7 +29,7 @@ public class Main {
         // to: reciever number, use the "numbers" list to change the recipients
         // body: your message, use the "messageToSend" string to change the content of message
         // from: Replace "Testing" with your business name, your own number, dedicted number, or leave it blank (uses shared number).
-        // for more information regarding "from" follow: https://help.clicksend.com/article/4kgj7krx00-what-is-a-sender-id-or-sender-number
+        // for more information regarding "from" follow: https://help.clicksend.com/en/collections/57584-numbers-sender-ids
                 .messageBody("{" +
                         "\"to\":\""+phoneNumber+"\"," +
                         "\"source\":\"SQS\"," +
